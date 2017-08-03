@@ -1,0 +1,875 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>ULTIMATE APP</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/shadowbox.css">
+    <style>
+                                .clear {
+                            clear: :both;
+                        }
+
+                        .cont {
+                            float: left;
+                            width: 100%;
+                            background-color: transparent;
+                        }
+
+                            .cont .left {
+                                float: left;
+                                width: 48%;
+                                background-color: bisque;
+                                height: 25%;
+                                min-height: 25%;
+                                border: 0.25px solid;
+                                margin-right: 1px;
+                            }
+
+                                .cont .left .inner {
+                                    align-content: center;
+                                    width: 67%;
+                                    padding: 1px;
+                                    margin-left: 6%;
+                                    font-weight: lighter;
+                                    color: black;
+                                    float: left;
+                                }
+
+                        .one {
+                            background-color: #6495ed;
+                            color: white;
+                            float: right;
+                            width: 23%;
+                            ;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .onePercentage {
+                            color: #6495ed;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .two {
+                            background-color: #dda0dd;
+                            color: white;
+                            float: right;
+                            width: 25%;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .twoPercentage {
+                            color: #dda0dd;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .three {
+                            background-color: #20b2aa;
+                            color: white;
+                            float: right;
+                            width: 25%;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .threePercentage {
+                            color: #20b2aa;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .four {
+                            background-color: #d2b48c;
+                            color: white;
+                            float: right;
+                            width: 25%;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .fourPercentage {
+                            color: #d2b48c;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .five {
+                            background-color: deepskyblue;
+                            color: white;
+                            float: right;
+                            width: 25%;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .fivePercentage {
+                            color: deepskyblue;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .six {
+                            background-color: black;
+                            color: white;
+                            float: right;
+                            width: 25%;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .sixPercentage {
+                            color: black;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .seven {
+                            background-color: #fbc000;
+                            color: white;
+                            float: right;
+                            width: 25%;
+                            height: 30%;
+                            font-size: medium;
+                            padding: 1px;
+                            text-align: center;
+                        }
+
+                        .sevenPercentage {
+                            color: #fbc000;
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .cont .right {
+                            float: left;
+                            width: 49%;
+                            margin: 1px;
+                            background-color: bisque;
+                            height: 25%;
+                            min-height: 25%;
+                            border: 0.25px solid;
+                        }
+
+                        .cont .full {
+                            width: 100%;
+                        }
+
+                        .cont .right .inner {
+                            align-content: center;
+                            width: 66%;
+                            padding: 1px;
+                            margin-left: 6%;
+                            font-weight: lighter;
+                            color: black;
+                            float: left;
+                        }
+                        /*
+                 .cont .left .floatRightTop {
+                           background-color: #6495ed;
+                color: white;
+                float: right;
+                width: 23%;;
+                height: 30%;
+                font-size: medium;padding: 1px;text-align: center;
+                }
+                .cont .right .floatRightTop {
+                           background-color: #dda0dd;
+                color: white;
+                float: right;
+                width: 25%;
+                height: 30%;
+                font-size: medium;padding: 1px;text-align: center;
+                }
+            */
+                        .cont .left .percentage {
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .cont .right .percentage {
+                            width: 100%;
+                            height: 30%;
+                            font-size: -webkit-xxx-large;
+                            text-align: center;
+                            font-weight: bolder;
+                        }
+
+                        .cont .left .bottom {
+                            position: relative;
+                            font-size: small;
+                            color: dimgrey;
+                            font-weight: bold;
+                            margin: 2px;
+                            padding: 2px;
+                        }
+
+                        .cont .right .bottom {
+                            position: relative;
+                            font-size: small;
+                            color: dimgrey;
+                            font-weight: bold;
+                            margin: 2px;
+                            padding: 2px;
+                        }
+
+                        .images {
+                            margin: 5px;
+                        }
+
+                            .images .img {
+                                float: left;
+                                margin-right: 15px;
+                                width: 80px;
+                            }
+        .kpi_title {
+            margin-left: 10px;
+            margin-top: 4px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            color: white;
+            display: inline-block;
+        }
+
+        swiper-custom {
+            position: relative;
+            height: 100%;
+        }
+
+        .swiper-container {
+            height: 331%;
+        }
+
+        .swiper-slide {
+        }
+
+            .swiper-slide span {
+                text-align: center;
+                display: block;
+                margin: 20px;
+                font-size: 21px;
+            }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: none;
+            border: 1px solid #aaa;
+            border-radius: 1 0 0 0;
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #007aff;
+            border-color: #007aff;
+        }
+    </style>
+   
+ 
+ 
+    
+</head>
+<body>
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div style="background-color: white; border-right: 1px solid lightblue; display: block;" class="panel panel-left panel-cover" data-display="overlay">
+        <div align="center"><img style="margin-top: 7%; " src="logos/pm.gif"></div>
+        
+        <div class="list-block accordion-list" style="margin: 10% 0;">
+            <ul>
+                <li  data-bind="click:go_to_dashboard_google" style="background-color:#3598db;">
+                    <a class="item-link item-content" >
+                        <div class="item-media"><i style="font-size: 19px;" class="icon f7-icons menue_icon_font">graph_square</i></div>
+                        <div class="item-inner" style="background-image:none">
+                            <div class="item-title menue_font">KPI Dashbord</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="accordion-item" style="background-color:#3598db;">
+                    <a href="#" class="item-content item-link">
+                        <div class="item-media">
+                            <i style="font-size: 21px;padding-top: 5px;" class="icon f7-icons menue_icon_font">email</i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title menue_font">Work Flow Inbox</div>
+                            <div class="item-after" style="padding-bottom: 8%;padding-right: 10%;">
+                                <i class="icon demo-icon-2"><span class="badge bg-red " data-bind="text:TotalWorkFlowPendingItems">40</span></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="accordion-item-content">
+                        <div class="content-block">
+                            <ul>
+                                <li data-bind="foreach:MenueList" style="background-color:#3598db;">
+                                    <a class="item-link item-content" data-bind="click:$root.go_to_work_flow_inbox">
+                                        <div class="item-inner" style="background-image:none">
+                                             
+                                                <div class="item-title menue_font" data-bind="text:RecordType">Correspondence</div>
+                                                <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                                    <i class="icon demo-icon-2">
+                                                        <span class="badge bg-red" data-bind="text:TotalPendingItems">3</span>
+                                                    </i>
+                                                </div>
+                                            
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li   data-bind="click:go_to_help"  style="background-color:#3598db;">
+                    <a class="item-link item-content">
+                        <div class="item-media"><i style="font-size: 20px;" class="icon f7-icons menue_icon_font">help</i></div>
+                        <div class="item-inner" style="background-image:none">
+                            <div class="item-title menue_font">Help Desk</div>
+                        </div>
+                    </a>
+                </li>
+                <li    data-bind="click:go_to_subscribe"   style="background-color:#3598db;">
+                    <a class="item-link item-content">
+                        <div class="item-media"><i style="font-size: 20px;" class="icon f7-icons menue_icon_font">social_rss</i></div>
+                        <div class="item-inner" style="background-image:none">
+                            <div class="item-title menue_font">Subscribe</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar topBar">
+        <div class="navbar-inner topBar">
+            <div class="left topBar">
+                <div class="r1ight topBar">
+                    <a style="color:#f7f7f8" href="#" class="link icon-only open-panel"> <i class="icon f7-icons">bars</i></a>
+                </div>
+            </div>
+            <center>
+                <div class="center sliding topBar">Portfolio Summary</div>
+            </center>
+        </div>
+    </div>
+    <div class="view">
+        <div class="pages">
+             
+            <div data-page="dashboard" class="page">
+                <div class="page-content" style="height:12000px;background-image: url('./logos/kbg.jpg');background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
+                    <center>
+                        <span id="loder" style="width:42px;display:none; height:42px;padding-top:10px;" class="preloader preloader-white"></span>
+                        <div style="margin-top:10%" class="styled-select blue semi-square">
+                            <select data-bind="options: ProjectsList,value:selectedProject,  optionsText: 'ProjectName', optionsValue: 'Id', event:{ change: permissionChanged}"></select>
+                        </div>
+                    </center>
+                    <div style="margin-top:5%;" class="swiper-container">
+                        <div class="swiper-pagination" style="position: initial"></div>
+                        <div class="swiper-wrapper" style="margin-bottom: 3%;height: 100%;">
+                            <div class="swiper-slide" style="margin-bottom: 3%;height: 100%;">
+                                <div>
+                                    <div class="row">
+                                  
+                                        <div class="col-md-12" style="border-width:0px;width:98%;height:100%;background-color:transparent;margin:6% 2% 1% 2%">
+                                            <div id="map" style="width: 99%; height: 300px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12" style="border-width:0px;width:98%;height:26px;background-color:#3598db;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                display: block;
+                                                margin: 2px;
+                                                font-size: 14px;
+                                                color: white;">Corporate Overview</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: bold;
+                                                    ">Work Under Contract:</span>
+                                        </div>
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;" data-bind="text:WorkUnderContract"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: bold;
+                                                    ">Work in Progress (WIP):</span>
+                                        </div>
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;" data-bind="text:WorkinProgress"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: bold;
+                                                    ">Unstarted Contracts:</span>
+                                        </div>
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;" data-bind="text:UnstartedContracts"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: bold;
+                                                    ">Contract Changes:</span>
+                                        </div>
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;" data-bind="text:ContractChanges">
+                                               
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: bold;
+                                                    ">Projected Cost:</span>
+                                        </div>
+                                        <div class="col-md-6" style="border-width:0px;width:46%;height:21px;background-color:#ffffff;margin:0% 2% 2% 2%">
+                                            <span style="text-align: center;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;" data-bind="text:ProjectedCost">
+                                                
+                                            </span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div data-bind="foreach:ProgramList">
+                                        <div class="row">
+                                            <div class="col-md-12" style="border-width:0px;width:98%;height:26px;background-color:#3598db;margin:0% 2% 0% 2%">
+                                                <span style="text-align: left;
+                                                display: block;
+                                                margin: 2px;
+                                                font-size: 13px;
+                                                color: white;padding-left: 5px;" data-bind="text:Name">Program:  Commercial</span>
+                                            </div>
+                                        </div>
+                                        <div class="row"  data-bind="foreach:ProjectList">
+                                            <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#d3d3d3;margin:0% 2% 0% 2%">
+                                                <div class="row">
+                                                    <div class="col-md-3" style="width:30%">
+                                                        <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: bold;padding-left: 5px;
+                                                    " data-bind="text:ProjectNumber"></span>
+                                                    </div>
+                                                    <div class="col-md-9" style="width:70%">
+                                                        <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 14px;
+                                                        color: blue;
+                                                        font-weight: bold;padding-left: 5px;
+                                                    "  data-bind="text:ProjectName,click:$root.go_to_dashboard_ex" ></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Projected Budget:</span>
+                                                            </div>
+                                                            <div class="col-md-9" style="width:60%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="largeNumber:OriginalBudget"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Projected Cost:</span>
+                                                            </div>
+                                                            <div class="col-md-9" style="width:60%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="largeNumber:AnticipatedCost"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Projected Profit:</span>
+                                                            </div>
+                                                            <div class="col-md-5" style="width:30%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: blue;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="largeNumber:ForecastsVariance,click:$root.go_to_dashboard_cost"></span>
+                                                            </div>
+                                                            <div class="col-md-4" style="width:30%">
+                                                                <i class="f7-icons" data-bind="visible:ForecastsVariance>0,click:$root.go_to_dashboard_cost" style="color:green;font-size: 17px;
+    font-weight: bold">check</i>
+                                                                <i class="f7-icons" data-bind="visible:ForecastsVariance<=0,click:$root.go_to_dashboard_cost" style="color:red;font-size: 17px;
+    font-weight: bold">info_fill</i>
+
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Baseline Finish Date:</span>
+                                                            </div>
+                                                            <div class="col-md-9" style="width:60%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: blue;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="text:$root.frmtDate(BaselineFinishDate),click:$root.go_to_dashboard_Scheduling"></span>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Current Finish Date:</span>
+                                                            </div>
+                                                            <div class="col-md-5" style="width:30%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: blue;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="text:$root.frmtDate(FinishDate),click:$root.go_to_dashboard_Scheduling"></span>
+                                                            </div>
+                                                            <div class="col-md-4" style="width:30%">
+                                                                <i class="f7-icons" data-bind="visible:FinishDate>=BaselineFinishDate,click:$root.go_to_dashboard_Scheduling" style="color:green;font-size: 17px;
+    font-weight: bold">check</i>
+                                                                <i class="f7-icons" data-bind="visible:FinishDate<BaselineFinishDate,click:$root.go_to_dashboard_Scheduling" style="color:red;font-size: 17px;
+    font-weight: bold">info_fill</i>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Outstanding Doc.:</span>
+                                                            </div>
+                                                            <div class="col-md-9" style="width:60%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: blue;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="text:OUTSTANDING_DOCUMENT,click:$root.go_to_dashboard"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="border-width:0px;width:96%;height:100%;background-color:#ffffff;margin:0% 2% 0% 2%">
+                                                        <div class="row">
+                                                            <div class="col-md-3" style="width:40%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: black;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    ">Overdue Doc.:</span>
+                                                            </div>
+                                                            <div class="col-md-5" style="width:30%">
+                                                                <span style="text-align: left;
+                                                        display: block;
+                                                        margin: 1px;
+                                                        font-size: 11px;
+                                                        color: blue;
+                                                        font-weight: normal;padding-left: 5px;
+                                                    " data-bind="text:OVERDUE_DOCUMENT,click:$root.go_to_dashboard"></span>
+                                                            </div>
+                                                            <div class="col-md-4" style="width:30%">
+                                                                <i class="f7-icons" data-bind="visible:OVERDUE_DOCUMENT<=0,click:$root.go_to_dashboard" style="color:green;font-size: 17px;
+    font-weight: bold">check</i>
+                                                                <i class="f7-icons" data-bind="visible:OVERDUE_DOCUMENT>0,click:$root.go_to_dashboard" style="color:red;font-size: 17px;
+    font-weight: bold">info_fill</i>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                  
+                                 </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <!--<div class="row" style="width:100%">
+                                    <div class="col-md-12">
+                                        <div style="margin-top:10%" class="styled-select blue semi-square">
+                                            <center>
+                                                <span id="loder" style="width:42px;display:none; height:42px;padding-top:10px;" class="preloader preloader-white"></span>
+                                                <div style="margin-top:10%" class="styled-select blue semi-square">
+                                                    <select class="" data-bind="options: ProjectsList, value:selectedProject, optionsText: 'ProjectName', optionsValue: 'Id' "></select>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <br />
+                                <div>
+                                   
+                                    <div class="row">
+                                        
+                                        <div class="col-md-12" style="border-width:0px;width:98%;margin:0% 2% 2% 2%">
+                                            <div class="cont" id="cont"></div>
+                                        </div>
+                                    </div>
+                                    <!--<div class="row">
+                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
+                                            <center>
+                                                <span class="kpi_title" style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
+    color:white;
+    display: inline-block;">Gate Way Status</span>
+                                            </center><br /><br />
+                                        </div>
+                                        <div class="col-md-12" style="border-width:0px;width:98%;height:350px;background-color:#d5e8f5;margin:0% 2% 2% 2%">
+                                            <div id="containerddd8" style="width:98%;height:300px; background-color:#d5e8f5;margin: 0 auto"></div>
+                                        </div>
+                                    </div>-->
+                                </div>
+
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <br /><br /><br /><br /><br />
+                </div>
+            </div>
+            <div class="toolbar tabbar tabbar-labels" style="display:block;    position: fixed;">
+                <div class="toolbar-inner">
+                    <a   href="#" data-bind="click:go_to_dashboard_google" class="tab-link active">
+                        <i class="icon f7-icons">home_fill</i>
+                        <span class="tabbar-label">Home</span>
+                    </a>
+                    <a   href="#" data-bind="click:go_to_settings"  class="tab-link">
+                        <i class="icon f7-icons">
+                            settings_fill
+                        </i>
+                        <span class="tabbar-label">Setting</span>
+                    </a>
+                    <a   class="tab-link"  href="#" data-bind="click:logout" >
+                        <i class="icon f7-icons">logout_fill</i>
+                        <span class="tabbar-label">Logout</span>
+                    </a>
+                </div>
+            </div>
+            <!--<div class="toolbar tabbar tabbar-labels" style="display: block;
+            position: absolute;
+            bottom: 7%;
+            width: 100%;">
+                        <div class="toolbar-inner">
+                            <a id="HomeTab" href="main.html" class="tab-link active" style="color:white;">
+                                <i class="icon f7-icons" style="color:white;">home_fill</i>
+                                <span class="tabbar-label" style="color:white;">Home</span>
+                            </a>
+                            <a id="Setting" href="Setting.html" class="tab-link" style="color:white;">
+                                <i class="icon f7-icons" style="color:white;">
+                                    settings_fill
+                                </i>
+                                <span class="tabbar-label" style="color:white;">Setting</span>
+                            </a>
+                            <a id="Logout" class="tab-link" style="color:white;">
+                                <i class="icon f7-icons" style="color:white;">logout_fill</i>
+                                <span class="tabbar-label" style="color:white;">Logout</span>
+                            </a>
+                        </div>
+                    </div>-->
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" src="js/Loclization.js"></script>
+    <script type="text/javascript" src="js/Getting.js"></script>
+    <script type="text/javascript" src="js/Posting.js"></script>
+    <script type="text/javascript" src="js/Vlaidation.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/highcharts-3d.js"></script>
+    <script type="text/javascript" src="js/export-data.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="js/numeral.min.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.debug.js"></script>
+    <script type="text/javascript" src="js/knockout.validation.js"></script>
+    <script type="text/javascript" src="js/DashboardUI.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/shadowbox.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7XgD17kwbsbdgl92Q26_suKecVsbS37Y&callback=initMap"
+            async defer></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var owner = new DashboardUI();
+            ko.applyBindings(owner);
+        });
+    </script>
+</body>
+</html>

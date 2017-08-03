@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>ULTIMATE APP</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body  onload="CopyRights();">
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div style="background-color: white; border-right: 1px solid lightblue; display: block;" class="panel panel-left panel-cover" data-display="overlay">
+      <div align="center"><img style="margin-top: 7%; "  src="logos/pm.gif"></div>
+      <div class="list-block accordion-list" style="margin: 10% 0;">
+          <ul>
+            <li id="kpitab" style="background-color:#3598db;">
+                  <a class="item-link item-content">
+                      <div class="item-media"><i style="font-size: 19px;" class="icon f7-icons menue_icon_font">graph_square</i></div>
+                      <div class="item-inner" style="background-image:none">
+                          <div class="item-title menue_font">KPI Dashbord</div>
+                      </div>
+                  </a>
+            </li>
+            <li class="accordion-item" style="background-color:#3598db;">
+            <a href="#" class="item-content item-link">
+                 <div class="item-media">
+                     <i style="font-size: 21px;padding-top: 5px;" class="icon f7-icons menue_icon_font">email</i>
+                </div>
+                <div class="item-inner">
+                    <div  class="item-title menue_font">Work Flow Inbox</div>
+                     <div class="item-after" style="padding-bottom: 8%;padding-right: 10%;"> 
+                        <i class="icon demo-icon-2"><span class="badge bg-red " >40</span></i>
+                     </div>
+                </div>
+            </a>
+            <div class="accordion-item-content">
+                     <div class="content-block">
+                        <ul>
+                            <li id="Workflow_correspondence" style="background-color:#3598db;">
+                                <a  class="item-link item-content">
+                                    <div class="item-inner" style="background-image:none">
+                                        <div class="item-title menue_font">Correspondence</div>
+                                        <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                            <i class="icon demo-icon-2">
+                                                <span class="badge bg-red">3</span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li id="Workflow_correspondence2" style="background-color:#3598db;">
+                                <a href="main.html" class="item-link item-content">
+                                    <div class="item-inner" style="background-image:none">
+                                        <div class="item-title menue_font">RFIs</div>
+                                        <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                            <i class="icon demo-icon-2">
+                                                <span class="badge bg-red">17</span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li id="Workflow_correspondence3" style="background-color:#3598db;">
+                                <a href="main.html" class="item-link item-content">
+                                    <div class="item-inner" style="background-image:none">
+                                        <div class="item-title menue_font">Transmittals</div>
+                                        <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                            <i class="icon demo-icon-2">
+                                                <span class="badge bg-red">12</span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li id="Workflow_correspondence4" style="background-color:#3598db;">
+                                <a href="main.html" class="item-link item-content">
+                                    <div class="item-inner" style="background-image:none">
+                                        <div class="item-title menue_font">Routing Slip</div>
+                                        <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                            <i class="icon demo-icon-2">
+                                                <span class="badge bg-red">5</span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li id="Workflow_correspondence5" style="background-color:#3598db;">
+                                <a href="main.html" class="item-link item-content">
+                                    <div class="item-inner" style="background-image:none">
+                                        <div class="item-title menue_font">Snag List</div>
+                                        <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                            <i class="icon demo-icon-2">
+                                                <span class="badge bg-red">3</span>
+                                            </i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                         </ul>
+                    </div>
+           </div>
+          </li>
+            <li id="HelpDeskTab" style="background-color:#3598db;">
+                <a class="item-link item-content">
+                <div class="item-media"><i style="font-size: 20px;" class="icon f7-icons menue_icon_font">help</i></div>
+                <div class="item-inner" style="background-image:none">
+                    <div  class="item-title menue_font">Help Desk</div>
+                </div>
+                </a>
+            </li>
+         </ul>
+     </div>
+    </div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="navbar"style="background-color:#3598DB; display:none">
+          <div class="navbar-inner">
+            <div class="center sliding"></div>
+            <div class="right">
+              <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="pages navbar-through toolb1ar-fixed">
+          <div data-page="index" class="page no-navbar" >
+            <div class="page-content"  style="background-image: url('./logos/bg1.jpg');background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
+                <img  src="./logos/HMC.png" style="width:50%;margin-top:5%;margin-left:45%">
+                 <div style="" class="login_form">
+                    <h2 style="text-align: center;color: rgb(50,138,174);">HFD EXECUTIVE APP</h2>
+                        <form action="/action_page.php">
+                            <input type="text" id="txtUsername" name="txtUsername" placeholder="Username">
+                            <input type="password" class="password"  id="txtPassword" name="txtPassword"  placeholder="Password">
+                            <input id ="next"  type="button" data-bind="click:Service_Login_Validate" class="submitbtn" value="Submit">
+                            <center>
+                                <label id="msg" class="lblMessage"></label>
+                            </center>
+                            
+                        </form>
+                       <div style="margin-top: 10%;">
+                          <center>  
+                              <p id="op" style="font-size:9px;"></p>
+                          </center>
+                      </div>
+                </div>
+           </div>
+         </div>
+        </div>
+        <div class="toolbar tabbar tabbar-labels" style="display:none">
+            <div class="toolbar-inner">
+                <a id="HomeTab" href="main.html" class="tab-link active">
+                    <i class="icon f7-icons">home_fill</i>
+                    <span class="tabbar-label">Home</span>
+                </a>
+                <a id="Setting" href="Setting.html" class="tab-link">
+                    <i class="icon f7-icons">
+                        settings_fill
+                    </i>
+                    <span class="tabbar-label">Setting</span>
+                </a>
+                <a id="Logout" class="tab-link">
+                    <i class="icon f7-icons">logout_fill</i>
+                    <span class="tabbar-label">Logout</span>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" src="js/Loclization.js"></script>
+    <script type="text/javascript" src="js/Getting.js"></script>
+    <script type="text/javascript" src="js/Posting.js"></script>
+    <script type="text/javascript" src="js/Vlaidation.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/highcharts-3d.js"></script>
+    <script type="text/javascript" src="js/export-data.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.debug.js"></script>
+    <script type="text/javascript" src="js/knockout.validation.js"></script>
+    <script type="text/javascript" src="js/ServicesUI.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var owner = new ServicesUI();
+            ko.applyBindings(owner);
+        });
+      </script>
+  </body>
+</html>
