@@ -10,6 +10,7 @@
 }
 var UserID = getUrlVars()["UserID"];
 var UserName = getUrlVars()["UserName"];
+
 var projectid = getUrlVars()["projectid"];
 function Document_Management_DashboardUI() {
     var bindingsApplied = false;
