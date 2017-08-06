@@ -30,6 +30,7 @@ Template7.global = {
     isArabic: false,
     isEnglish: true
 };
+var baseUrl = "http://localhost:6607/";
 
 function CopyRights(){
     document.getElementById("op").innerHTML ="© All Rights Reserved to <span style=color:#6C3483;font-weight: bold;>Ultimate Solutions</span> " + new Date().getFullYear();   
