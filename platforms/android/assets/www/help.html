@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>ULTIMATE APP</title>
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/shadowbox.css">
+    <style>
+        .kpi_title {
+            margin-left: 10px;
+            margin-top: 4px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            color: white;
+            display: inline-block;
+        }
+
+        swiper-custom {
+            position: relative;
+            height: 100%;
+        }
+
+        .swiper-container {
+            height: 331%;
+        }
+
+        .swiper-slide {
+        }
+
+            .swiper-slide span {
+                text-align: center;
+                display: block;
+                margin: 20px;
+                font-size: 21px;
+            }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: none;
+            border: 1px solid #aaa;
+            border-radius: 1 0 0 0;
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #007aff;
+            border-color: #007aff;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div style="background-color: white; border-right: 1px solid lightblue; display: block;" class="panel panel-left panel-cover" data-display="overlay">
+        <div align="center"><img style="margin-top: 7%; " src="logos/pm.gif"></div>
+
+        <div class="list-block accordion-list" style="margin: 10% 0;">
+            <ul>
+                <li data-bind="click:go_to_dashboard_google" style="background-color:#3598db;">
+                    <a class="item-link item-content">
+                        <div class="item-media"><i style="font-size: 19px;" class="icon f7-icons menue_icon_font">graph_square</i></div>
+                        <div class="item-inner" style="background-image:none">
+                            <div class="item-title menue_font">KPI Dashbord</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="accordion-item" style="background-color:#3598db;">
+                    <a href="#" class="item-content item-link">
+                        <div class="item-media">
+                            <i style="font-size: 21px;padding-top: 5px;" class="icon f7-icons menue_icon_font">email</i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title menue_font">Work Flow Inbox</div>
+                            <div class="item-after" style="padding-bottom: 8%;padding-right: 10%;">
+                                <i class="icon demo-icon-2"><span class="badge bg-red " data-bind="text:TotalWorkFlowPendingItems">40</span></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="accordion-item-content">
+                        <div class="content-block">
+                            <ul>
+                                <li data-bind="foreach:MenueList" style="background-color:#3598db;">
+                                    <a class="item-link item-content" data-bind="click:$root.go_to_work_flow_inbox">
+                                        <div class="item-inner" style="background-image:none">
+
+                                            <div class="item-title menue_font" data-bind="text:RecordType">Correspondence</div>
+                                            <div class="item-after" style="padding-bottom: 8%;padding-right: 4%;">
+                                                <i class="icon demo-icon-2">
+                                                    <span class="badge bg-red" data-bind="text:TotalPendingItems">3</span>
+                                                </i>
+                                            </div>
+
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li data-bind="click:go_to_help" style="background-color:#3598db;">
+                    <a class="item-link item-content">
+                        <div class="item-media"><i style="font-size: 20px;" class="icon f7-icons menue_icon_font">help</i></div>
+                        <div class="item-inner" style="background-image:none">
+                            <div class="item-title menue_font">Help Desk</div>
+                        </div>
+                    </a>
+                </li>
+                <li data-bind="click:go_to_subscribe" style="background-color:#3598db;">
+                    <a class="item-link item-content">
+                        <div class="item-media"><i style="font-size: 20px;" class="icon f7-icons menue_icon_font">social_rss</i></div>
+                        <div class="item-inner" style="background-image:none">
+                            <div class="item-title menue_font">Subscribe</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar topBar">
+        <div class="navbar-inner topBar">
+            <div class="left topBar">
+                <div class="r1ight topBar">
+                    <a style="color:#f7f7f8" href="#" class="link icon-only open-panel"> <i class="icon f7-icons">bars</i></a>
+                </div>
+            </div>
+            <center>
+                <div class="center sliding topBar">Help Desk</div>
+            </center>
+        </div>
+    </div>
+    <div class="view">
+        <div class="pages">
+
+            <div data-page="dashboard" class="page">
+                <div class="page-content" style="height:100%;background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
+                    <div style="margin: 2% 2% 2% 2%">
+                        <div class="content-block">
+                            <p>
+                                Please Submit Your Queries / Problems<br />
+                                To : <span style="color:#6C3483">Contact@uspmc.com</span><br />
+                                or Submit the below form
+                            </p>
+                        </div>
+                        <div style="margin:2% 2% 2% 2%;width:100% ">
+                            <div class="item-title label form_label_heading">
+                                <span class="form_label_heading_text">Module:</span>
+                            </div>
+                            <div class="item-title label form_label_input">
+                                <div class="item-input form_label_heading_text">
+                                    <select data-bind="options: ModuleList,value:selectedModule,  optionsText: 'name', optionsValue: 'name'" style="width:98%;border: 0px;"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin:2% 2% 2% 2%;width:100% ">
+                            <div class="item-title label form_label_heading">
+                                <span class="form_label_heading_text">Type Of Issue:</span>
+                            </div>
+                            <div class="item-title label form_label_input">
+                                <div class="item-input form_label_heading_text">
+                                    <input type="text" id="lname" name="lastname" data-bind="value:TypeOfIssue" class="form_input_text" style="width:98%;border: 0px;" placeholder="Type Of Issue">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin:2% 2% 2% 2%;width:100% ">
+                            <div class="item-title label form_label_heading">
+                                <span class="form_label_heading_text">Subject:</span>
+                            </div>
+                            <div class="item-title label form_label_input">
+                                <div class="item-input form_label_heading_text">
+                                    <input type="text" id="lname" name="lastname"  data-bind="value:Subject" class="form_input_text" style="width:98%;border: 0px;" placeholder="Subject">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin:2% 2% 2% 2%;width:100% ">
+                            <div class="item-title label form_label_heading">
+                                <span class="form_label_heading_text">Description:</span>
+                            </div>
+                            <div class="item-title label form_label_input">
+                                <div class="item-input form_label_heading_text">
+                                    <textarea class="form_input_text" style="width:98%;border: 0px;"  data-bind="value:Description" ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <center>
+                                <label id="msg" class="lblMessage"></label>
+                            </center>
+                        </div>
+                        <!--<div style="margin:2% 2% 2% 2%;width:100% ">
+                            <div class="item-title label form_label_heading">
+                                <span class="form_label_heading_text">Attachment:</span>
+                            </div>
+                            <div class="item-title label form_label_text">
+                                <span class="form_label_text_font"><i style="color:rgb(0,120,193); font-weight: normal;font-size: 21px;padding-top: 5px;" class="icon f7-icons">camera</i>&nbsp; Open Camera</span>
+                                <br />
+                                <span class="form_label_text_font"><i style="color:rgb(0,120,193); font-weight: normal;font-size: 21px;padding-top: 5px;" class="icon f7-icons">photos</i>&nbsp; Open Gallery</span>
+                            </div>
+                        </div>-->
+                        <div style="margin:2% 2% 2% 2%;width:90% ">
+                            <input type="button" class="submitbtn" data-bind="click:InsertHelpInfo" value="Submit">
+                        </div>
+                        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+                    </div>
+                    <br /><br /><br /><br /><br />
+                </div>
+            </div>
+            <div class="toolbar tabbar tabbar-labels" style="display:block;    position: fixed;">
+                <div class="toolbar-inner">
+                    <a href="#" data-bind="click:go_to_dashboard_google" class="tab-link active">
+                        <i class="icon f7-icons">home_fill</i>
+                        <span class="tabbar-label">Home</span>
+                    </a>
+                    <a href="#" data-bind="click:go_to_settings" class="tab-link">
+                        <i class="icon f7-icons">
+                            settings_fill
+                        </i>
+                        <span class="tabbar-label">Setting</span>
+                    </a>
+                    <a class="tab-link" href="#" data-bind="click:logout">
+                        <i class="icon f7-icons">logout_fill</i>
+                        <span class="tabbar-label">Logout</span>
+                    </a>
+                </div>
+            </div>
+            <!--<div class="toolbar tabbar tabbar-labels" style="display: block;
+            position: absolute;
+            bottom: 7%;
+            width: 100%;">
+                        <div class="toolbar-inner">
+                            <a id="HomeTab" href="main.html" class="tab-link active" style="color:white;">
+                                <i class="icon f7-icons" style="color:white;">home_fill</i>
+                                <span class="tabbar-label" style="color:white;">Home</span>
+                            </a>
+                            <a id="Setting" href="Setting.html" class="tab-link" style="color:white;">
+                                <i class="icon f7-icons" style="color:white;">
+                                    settings_fill
+                                </i>
+                                <span class="tabbar-label" style="color:white;">Setting</span>
+                            </a>
+                            <a id="Logout" class="tab-link" style="color:white;">
+                                <i class="icon f7-icons" style="color:white;">logout_fill</i>
+                                <span class="tabbar-label" style="color:white;">Logout</span>
+                            </a>
+                        </div>
+                    </div>-->
+        </div>
+
+    </div>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/Common.js"></script>
+    <script type="text/javascript" src="js/Loclization.js"></script>
+    <script type="text/javascript" src="js/Getting.js"></script>
+    <script type="text/javascript" src="js/Posting.js"></script>
+    <script type="text/javascript" src="js/Vlaidation.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/highcharts-3d.js"></script>
+    <script type="text/javascript" src="js/export-data.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.debug.js"></script>
+    <script type="text/javascript" src="js/knockout.validation.js"></script>
+    <script type="text/javascript" src="js/helpUI.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var owner = new helpUI();
+            ko.applyBindings(owner);
+            
+        });
+    </script>
+</body>
+</html>

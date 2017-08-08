@@ -15,7 +15,6 @@ var projectid = getUrlVars()["projectid"];
 function DashboardUI() {
     var bindingsApplied = false;
     var self = this;
-    var baseUrl = "http://localhost:6607/";
     function getUrlVars() {
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -79,7 +78,7 @@ function DashboardUI() {
         return month + '-' + day + '-' + year;
     }
     ko.bindingHandlers.largeNumber = {
-        init: function (element, valueAccessor) {
+    init: function (element, valueAccessor) {
             var value = valueAccessor();
             var interceptor = ko.computed({
                 read: function () {

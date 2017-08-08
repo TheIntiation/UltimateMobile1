@@ -78,7 +78,7 @@ function DashboardUI() {
         return month + '-' + day + '-' + year;
     }
     ko.bindingHandlers.largeNumber = {
-        init: function (element, valueAccessor) {
+    init: function (element, valueAccessor) {
             var value = valueAccessor();
             var interceptor = ko.computed({
                 read: function () {

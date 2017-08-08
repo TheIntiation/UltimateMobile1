@@ -10,11 +10,11 @@
 }
 var UserID = getUrlVars()["UserID"];
 var UserName = getUrlVars()["UserName"];
+
 var projectid = getUrlVars()["projectid"];
 function Document_Management_DashboardUI() {
     var bindingsApplied = false;
     var self = this;
-    var baseUrl = "http://localhost:6607/";
     function getUrlVars() {
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -847,7 +847,7 @@ function Document_Management_DashboardUI() {
    
 
     
-   
+    self.GetMenueList();
     self.GetProjectsList();
     
     

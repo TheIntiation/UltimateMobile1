@@ -1,6 +1,5 @@
 ﻿function ServicesUI() {
     var self = this;
-    var baseUrl = "http://localhost:6607/";
    // alert("sfsa");
 
 

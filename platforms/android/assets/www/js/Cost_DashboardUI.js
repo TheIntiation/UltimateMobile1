@@ -14,7 +14,6 @@ var projectid = getUrlVars()["projectid"];
 function Cost_DashboardUI() {
     var bindingsApplied = false;
     var self = this;
-    var baseUrl = "http://localhost:6607/";
     function getUrlVars() {
         var vars = [], hash;
         var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -1097,7 +1096,7 @@ function Cost_DashboardUI() {
    
 
     
-   
+    self.GetMenueList();
     self.GetProjectsList();
     
     

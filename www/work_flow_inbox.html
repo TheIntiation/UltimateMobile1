@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="css/framework7-icons.css">
     <link rel="stylesheet" href="css/my-app.css">
     <link rel="stylesheet" href="css/shadowbox.css">
-
-
     <style>
         .kpi_title {
             margin-left: 10px;
@@ -56,6 +54,30 @@
         .swiper-pagination-bullet-active {
             background: #007aff;
             border-color: #007aff;
+        }
+  input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+.center {position: static; top: 0; left: 0; right: 0; left: 0; text-align: center;  height: 10%; width: 100%; vertical-align: middle;}
+        .center .rect {
+            text-align: center; display: inline-block; vertical-align: middle;
+        }
+         .text {
+            text-align: center; display: inline-block; vertical-align: middle;
         }
     </style>
 
@@ -140,7 +162,7 @@
                 </div>
             </div>
             <center>
-                <div class="center sliding topBar">Document Management</div>
+                <div class="center sliding topBar">Workflow Inbox Details</div>
             </center>
         </div>
     </div>
@@ -148,94 +170,99 @@
         <div class="pages">
 
             <div data-page="dashboard" class="page">
-                <div class="page-content" style="height:12000px;background-image: url('./logos/kbg.jpg');background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
-                    <center>
-                        <span id="loder" style="width:42px;display:none; height:42px;padding-top:10px;" class="preloader preloader-white"></span>
-                        <div style="margin-top:10%" class="styled-select blue semi-square">
-                            <select  data-bind="options: ProjectsList,value:selectedProject,  optionsText: 'ProjectName', optionsValue: 'Id', event:{ change: permissionChanged}"></select>
-                        </div>
+                <div class="page-content" style="height:100%;background-image: url('./logos/kbg.jpg');background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
+                     
+                
+                    <div class="buttons-row" style="width: inherit;margin: 2%;">
 
-                    </center>
-                    <div style="margin-top:5%;" class="swiper-container">
-                        <div class="swiper-wrapper" style="margin-bottom: 3%;height: 100%;">
-                            <div class="swiper-slide">
+                        <a href="#" class="button active color-lightgreen " style="width:22%;margin-left:1%;margin-right:1%;font-size: 12px;" title="Approve">Approve</a>
+                        <a href="#" class="button active  color-orange" style="width:20%;margin-left:1%;margin-right:1%;" title="Return">Return</a>
+                        <a href="#" class="button active  color-red" style="width:20%;margin-left:1%;margin-right:1%;" title="Reject">
+                            Reject</a>
+                        <a href="#" class="button active  color-green" style="width: 30%;margin-left: 1%;margin-right: 1%;font-size: 12px;" title="Final Approve">
+                            Final Approve</a>
+                    </div>
                                 <div id="dd">
-                                    
-                                    <div class="row">
+
+                                    <div class="row" data-bind="foreach:WorkflowInboxList">
                                         <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
                                             <center>
-                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#ffffff;
-    display: inline-block;">Punch Lists</span>
+                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;color:#ffffff; display: inline-block;"><span data-bind="text: Project"></span></span>
                                             </center><br /><br />
                                         </div>
-                                        <div class="col-md-12" style="border-width:0px;width:98%;height:450px;background-color:#d5e8f5;margin:0% 2% 2% 2%">
-                                            <span class="kpi_title" style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#222222;
-    display: inline-block;" data-bind="text:TotalOutStanding">Total Outstanding Punchlist Items: 21</span><br />
-                                            <span class="kpi_title" style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#222222;
-    display: inline-block;" data-bind="text:TotalOverDue">Total Overdue Punchlist Items: 1</span><br />
-                                            <div id="punchListChartContainer" style="width:98%;height:356px; background-color:#d5e8f5;margin: 0 auto"></div>
-                                        </div>
+                                        <div class="col-md-12" style="border-width:0px;width:98%;height:100%;background-color:#d5e8f5;margin:0% 2% 2% 2%">
+                                            Record : <span data-bind="text:RecordNumber"></span> 
+                                            <br /> Description : <span data-bind="text: Description"></span> 
+                                            <br /><div style="float:left;" > DueDate : <span data-bind="text: DueDate"></span></div> 
+                                            <div style="float:right;"> Step: <span data-bind="text: StepNumber"></span> of <span data-bind="text: NumberOfSteps"></span></div> 
+                                            <br /> Comments : <br /><textarea onfocus="this.select();" data-bind="value: Comment" rows="2" style="width:inherit;">
+                                            </textarea>
+                                            
+                                                <div class="buttons-row" style="width: inherit;margin: 2%;">
+                                                   
+                                                   <a href="#"  class="button active color-lightgreen " data-bind="visible: !FinalStep, click: $root.NormalApproveDoc.bind(this)" style="width: 22%; margin-left: 1%; margin-right: 1%;font-size: 13px;" title="Approve"><i style="color: white;font-weight: normal;font-size:18px;" title="fdgfg" class="icon f7-icons">arrow_right_fill</i></a>
+                                                    <a href="#" data-bind="click: $root.ReturnDoc.bind(this)"  class="button active  color-orange"  style="width:24%;margin-left:1%;margin-right:1%;" title="Return"><i style="color: white;font-weight: normal;font-size:18px;" class="icon f7-icons">arrow_left_fill</i></a>
+                                                    <a href="#" class="button active  color-red" data-bind="click: $root.RejectDoc.bind(this)" style="width:24%;margin-left:1%;margin-right:1%;" title="Reject"><i style="color: white;font-weight: normal;font-size:18px;" class="icon f7-icons">close_round</i></a>
+                                                     <a href="#" class="button active  color-green" data-bind="visible: FinalStep, click: $root.FinalApproveDoc.bind(this)" style="width:24%;margin-left:1%;margin-right:1%;" title="Final Approve"><i style="color: white;font-weight: normal;font-size:18px;" class="icon f7-icons">check_round</i></a>
+                                                    <!--<p id="doc1" data-bind="text: DocumentId"> </p>-->
+                                                </div>
+                                            
+                                            <div class="list-block accordion-list accordion_list_style" style="width: inherit; margin-left: 1%;margin-right: 1%;">
+                                                <ul>
+                                                    <li class="accordion-item">
+                                                        <a href="#" class="item-content item-link" style="background-color: #c8def7;">
+                                                            <div class="item-inner">
+                                                                <div class="item-title form_label_heading_text">Work Flow Detail</div>
+                                                            </div>
+                                                        </a>
+                                                        <div class="accordion-item-content">
+                                                            <div class="content-block" style="color:black;font-size:16px;" data-bind="foreach:VisualWorkFlow">
+                                                                <br />
+                                                                <div >
+                                                                    <svg width="100%" height="50" data-bind="visible:IsCurrentStep==false">
+                                                                        <rect width="100%" height="50" style="fill:#6495ed;stroke-width:1;stroke:rgb(0,0,0)" />
+                                                                        <!--<text class="text" x="35%" y="35" data-bind="text:RoleName" font-family="Verdana" font-size="15" fill="White"></text>-->
+                                                                        <text y="35">
+                                                                            <tspan x="50%" y="50%" text-anchor="middle" data-bind="text:RoleName" alignment-baseline="central" text-anchor="middle" font-family="Verdana" font-size="15" fill="White"></tspan>
+                                                                        </text>
+                                                                    </svg>
+
+                                                                    <span style="font-size:45px;margin-left:48%" data-bind="visible:IsCurrentStep==false">&#x2193;</span>
+                                                                    <svg class="center" width="100%" height="50" data-bind="visible:IsCurrentStep==true">
+                                                                        <rect width="100%" height="50" style="fill:#20b2aa;stroke-width:5;stroke:Orange" />
+                                                                        <!--<text class="text" x="35%" y="35" data-bind="text:RoleName" font-family="Verdana" font-size="15" fill="White"></text>-->
+                                                                        <text y="35">
+                                                                            <tspan x="50%" y="50%" text-anchor="middle" data-bind="text:RoleName" alignment-baseline="central" text-anchor="middle" font-family="Verdana" font-size="15" fill="White"></tspan>
+                                                                        </text>
+                                                                    </svg>
+                                                                    <span style="font-size:45px;margin-left:48%" data-bind="visible:IsCurrentStep==true">&#x2193;</span>
+                                                                </div>
+
+                                                               
+                                                                   
+                                                                
+                                                            </div>
+                                                            <svg width="98%" height="50" style="margin-left: 3%;">
+                                                                <rect width="95%" height="50" style="fill:#6495ed;stroke-width:1;stroke:rgb(0,0,0);margin-left:2%;" />
+                                                                <!--<text class="text" x="35%" y="35" font-family="Verdana" font-size="15" fill="White">Final Approve</text>-->
+                                                                <text y="35" >
+                                                                    <tspan x="50%" text-anchor="middle" alignment-baseline="central" text-anchor="middle" font-family="Verdana" font-size="15" fill="White">Final Approve</tspan>
+                                                                </text>
+                                                            </svg> 
+                                                            </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                          
+</div>
+                                   
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
-                                            <center>
-                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#ffffff;
-    display: inline-block;">Active Documents Per Project</span>
-                                            </center><br /><br />
-                                        </div>
-                                        <div class="col-md-12" style="border-width:0px;width:98%;height:350px;background-color:#d5e8f5;margin:0% 2% 2% 2%">
-                                        
-                                            <div id="containerActiveDocuments" style="width:98%;height:256px; background-color:#d5e8f5;margin: 0 auto"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
-                                            <center>
-                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#ffffff;
-    display: inline-block;">Delayed Documents Per Project</span>
-                                            </center><br /><br />
-                                        </div>
-                                        <div class="col-md-12" style="border-width:0px;width:98%;height:350px;background-color:#d5e8f5;margin:0% 2% 2% 2%">
-                                            <div id="containerDelayedDocuments" style="width:98%;height:256px; background-color:#d5e8f5;margin: 0 auto"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
-                                            <center>
-                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#ffffff;
-    display: inline-block;">RFI Status</span>
-                                            </center><br /><br />
-                                        </div>
-                                        <div class="col-md-12" style="border-width:0px;width:98%;height:325px;background-color:#d5e8f5;margin:0% 2% 2% 2%">
-                                            <div id="containerRFIStatus" style="width:98%;height:256px; margin: 0 auto"></div>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
-                                            <center>
-                                                <span class="kpi_title" style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:white;
-    display: inline-block;">Committment Change Order Status</span>
-                                            </center><br /><br />
-                                        </div>
-                                        <div class="col-md-12" style="border-width:0px;width:98%;height:350px;background-color:#d5e8f5;margin:0% 2% 2% 2%">
-                                            <div id="containerCosStatus" style="width:98%;height:280px; background-color:#d5e8f5;margin: 0 auto"></div>
-                                        </div>
-                                    </div>
+
+                                    <br /><br /><br /><br /><br />
                                 
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br /><br /><br /><br /><br />
-                </div>
+                            
+          
             </div>
             <div class="toolbar tabbar tabbar-labels" style="display:block;    position: fixed;">
                 <div class="toolbar-inner">
@@ -279,6 +306,25 @@
         </div>
 
     </div>
+        <div class="toolbar tabbar tabbar-labels" style="display:block;    position: fixed;">
+            <div class="toolbar-inner">
+                <a href="#" data-bind="click:go_to_dashboard_google" class="tab-link active">
+                    <i class="icon f7-icons">home_fill</i>
+                    <span class="tabbar-label">Home</span>
+                </a>
+                <a href="#" data-bind="click:go_to_settings" class="tab-link">
+                    <i class="icon f7-icons">
+                        settings_fill
+                    </i>
+                    <span class="tabbar-label">Setting</span>
+                </a>
+                <a class="tab-link" href="#" data-bind="click:logout">
+                    <i class="icon f7-icons">logout_fill</i>
+                    <span class="tabbar-label">Logout</span>
+                </a>
+            </div>
+        </div>
+     </div>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
 
@@ -293,14 +339,22 @@
     <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
     <script type="text/javascript" src="js/knockout-3.1.0.debug.js"></script>
     <script type="text/javascript" src="js/knockout.validation.js"></script>
-    <script type="text/javascript" src="js/Document_Management_DashboardUI.js"></script>
+    <script type="text/javascript" src="js/WorkflowDetailsUI.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            var owner = new Document_Management_DashboardUI();
+            var owner = new WorkflowDetailsUI();
+            $$('.confirm-title-ok').on('click', function () {
+                myApp.confirm('Are you sure?', 'Custom Title', function () {
+                    myApp.alert('You clicked Ok button');
+                });
+            });
+
+
             ko.applyBindings(owner);
-            
+         
+          
         });
     </script>
 </body>

@@ -14,7 +14,6 @@ var projectid = getUrlVars()["projectid"];
 
 function Scheduling_DashboardUI() {
 var self = this;
-var baseUrl = "http://localhost:6607/";
 var left='<div class="left"> </div>';            
 var right='<div class="right"><span data-bind="text: record.GateDescrption">test right</span> </div>';     
 var check=true;
@@ -95,6 +94,7 @@ self.GetStageGatesByProject =function ()  {
         });
  }
 
+self.GetMenueList();
 self.GetStageGatesByProject();             
         
     
