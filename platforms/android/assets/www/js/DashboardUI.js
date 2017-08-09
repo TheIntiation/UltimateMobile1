@@ -222,6 +222,8 @@ function DashboardUI() {
 
 
     self.GetPortifolioSummryDashbaord = function () {
+       // document.getElementById("Preloader1").style.display = "none";
+      document.getElementById("Preloader").style.display = "block";
         var GetPortifolioSummryDashbaord_URL = baseUrl + "api/WorkFlow/GetPortifolioSummryDashbaord?programid=0";
         $.ajax({
             url: GetPortifolioSummryDashbaord_URL,
@@ -242,14 +244,20 @@ function DashboardUI() {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 // alert('Error: ' + errorThrown + "/" + textStatus);
+                document.getElementById("Preloader").style.display = "none";
+            }, complete: function (data) {
+              
+                document.getElementById("Preloader").style.display = "none";
             }
         });
     };
 
 
     self.GetMenueList = function () {
+       // document.getElementById("Preloader").style.display = "block";
         var GetMenueList_URL = baseUrl + "api/WorkFlow/getWorkflowmenu?userId=" + self.UserName();
         var TotalWorkFlowPendingItems = parseInt(0);
+
         $.ajax({
             url: GetMenueList_URL,
             type: "GET",
@@ -269,11 +277,16 @@ function DashboardUI() {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 // alert('Error: ' + errorThrown + "/" + textStatus);
+              //  document.getElementById("Preloader").style.display = "none";
+            }, complete: function (data) {
+
+                //document.getElementById("Preloader").style.display = "none";
             }
         });
     };
 
     self.GetProjectsList = function () {
+        //document.getElementById("Preloader").style.display = "block";
         var GetProjectsList_URL = baseUrl + "api/WorkFlow/GetALLUserProjects?UserId=" + self.UserID();
         $.ajax({
             url: GetProjectsList_URL,
@@ -291,9 +304,11 @@ function DashboardUI() {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 // alert('Error: ' + errorThrown + "/" + textStatus);
+               // document.getElementById("Preloader").style.display = "none";
             }, complete: function (data) {
                 self.selectedProject(0);
                 bindingsApplied = true;
+                //document.getElementById("Preloader").style.display = "none";
             }
         });
     };
@@ -356,6 +371,7 @@ function DashboardUI() {
     }
 
     self.getMapData = function () {
+       // document.getElementById("Preloader").style.display = "block";
         var chk = parseInt(0);
         var GetPortifolioSummryDashbaord_URL = baseUrl + "api/WorkFlow/GetPortifolioSummryDashbaord?programid=-1";
         $.ajax({
@@ -374,8 +390,10 @@ function DashboardUI() {
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //alert('Error: ' + errorThrown + "/" + textStatus);
+                //document.getElementById("Preloader").style.display = "none";
             }, complete: function (data) {
                 self.GenrateMap();
+                //document.getElementById("Preloader").style.display = "none";
             }
         });
 
@@ -448,6 +466,8 @@ function DashboardUI() {
     /***********Global Services**********/
 
     self.GetProgramList = function () {
+        //alert("start loading");
+        document.getElementById("Preloader1").style.display = "block";
         var GetProgramList_URL = baseUrl + "api/WorkFlow/GetProgramsList?userid=" + self.UserID();
         $.ajax({
             url: GetProgramList_URL,
@@ -464,10 +484,14 @@ function DashboardUI() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                //alert('Error: ' + errorThrown + "/" + textStatus);
+             //   alert("error loading");
+                //alert('Error: ' + errorThrown + "/" + textStatusn
+                document.getElementById("Preloader1").style.display = "none";
             }, complete: function (data) {
                 //alert("complete");
                 // self.GenrateMap();
+                //alert("complete loading");
+                document.getElementById("Preloader1").style.display = "none";
             }
         });
 
