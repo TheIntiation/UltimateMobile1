@@ -115,7 +115,8 @@
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    document.getElementById("msg").innerHTML = "UserName/Password is Wrong!";
+                    document.getElementById("msg").innerHTML = "Please check your network connection!";
+                    myApp.alert("Network error. Contact your PMWeb Admin!");
                     $('#txtPassword').focus().select();
                     return;
                 }

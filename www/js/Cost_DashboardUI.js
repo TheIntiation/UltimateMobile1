@@ -252,6 +252,14 @@ function Cost_DashboardUI() {
     self.TotalRevisedContrcatSum = ko.observable(0);
     self.TotalInvoiced = ko.observable(0);
     self.GetCostSnap = function () {
+
+         datac = [];
+
+         data_OriginalCommitment = [];
+         data_ApprovedChanges = [];
+         data_RevisedContrcatSum = [];
+         data_Invoiced = [];
+         datas = [];
         var GetCostSnap_URL = baseUrl + "api/WorkFlow/getCostSnap?projectid=" + self.selectedProject();
 
         var TotalCount = parseInt(0);

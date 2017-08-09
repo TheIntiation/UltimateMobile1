@@ -303,6 +303,8 @@ function DashboardUI() {
         }
     };
     self.GetStageGatesByProject = function () {
+        htmlElements = "";
+
         var GetStageGatesList_URL = baseUrl + "api/WorkFlow/getStageGatesSnap?projectId=" + self.selectedProject();
         $.ajax({
             url: GetStageGatesList_URL,

@@ -138,7 +138,7 @@
                 </div>
             </div>
             <center>
-                <div class="center sliding topBar">Executive Project Dashboard</div>
+                <div class="center sliding topBar">Settings</div>
             </center>
         </div>
     </div>
@@ -146,50 +146,8 @@
         <div class="pages">
 
             <div data-page="dashboard" class="page">
-                <div class="page-content" style="height:12000px;background-image: url('./logos/kbg.jpg');background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
-                    <center>
-                        <span id="loder" style="width:42px;display:none; height:42px;padding-top:10px;" class="preloader preloader-white"></span>
-                        <div style="margin-top:10%" class="styled-select blue semi-square">
-                            <select  data-bind="options: ProjectsList,value:selectedProject,  optionsText: 'ProjectName', optionsValue: 'Id', event:{ change: permissionChanged}"></select>
-                        </div>
-
-                    </center>
-                    <div style="margin-top:5%;" class="swiper-container">
-                        <div class="swiper-wrapper" style="margin-bottom: 3%;height: 100%;">
-                            <div class="swiper-slide">
-                                <div id="dd">
-                                    
-                                    <div class="row">
-                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
-                                            <center>
-                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#ffffff;
-    display: inline-block;">Cost Summary</span>
-                                            </center><br /><br />
-                                        </div>
-                                            <div id="CostSummaryChartContainer" style="width:96%;height:356px; background-color:#d5e8f5;margin: 0 auto"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row" data-bind="foreach:projectPics">
-                                        <div class="col-md-12" style="border-width:0px;width:100%;height:30px;background-color:#3598db;margin:6% 2% 0% 2%">
-                                            <center>
-                                                <span style="margin-left:10px;margin-top:4px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size:14px;font-weight:normal;
-    color:#ffffff;
-    display: inline-block;">Project Pictures</span>
-                                            </center><br /><br />
-                                        </div>
-                                        <div class="col-md-12" style="border-width:0px;width:98%;height:100%;background-color:#d5e8f5;margin:0% 2% 2% 2%">
-                                            <img data-bind="attr: { src: file_name }"  style="width:100%"/>
-                                        </div>
-                                    </div>
-                                
-                                    
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="page-content" style="height:100%;background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
+                  
                     <br /><br /><br /><br /><br />
                 </div>
             </div>
@@ -234,7 +192,7 @@
                     </div>-->
         </div>
 
-
+    </div>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
 
@@ -249,12 +207,12 @@
     <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
     <script type="text/javascript" src="js/knockout-3.1.0.debug.js"></script>
     <script type="text/javascript" src="js/knockout.validation.js"></script>
-    <script type="text/javascript" src="js/Execitive_DashBoardUI.js"></script>
+    <script type="text/javascript" src="js/helpUI.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            var owner = new Execitive_DashBoardUI();
+            var owner = new helpUI();
             ko.applyBindings(owner);
             
         });
