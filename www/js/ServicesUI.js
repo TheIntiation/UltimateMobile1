@@ -1,24 +1,7 @@
 ﻿function ServicesUI() {
     var self = this;
-   // alert("sfsa");
 
 
-    function getUrlVars() {
-        var vars = [], hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-        for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
-    }
-
-    var me = getUrlVars()["me"];
-    var name2 = getUrlVars()["name2"];
-
-    //alert(me);
-    //alert(name2);
     /***********Global DATA MODELS**********/
 
     function LoginDTO(LoginDTO) {
@@ -27,23 +10,6 @@
         self.Password = LoginDTO.Password;
     }
 
-    function ProjectDTO(ProjectDTO) {
-        var self = this;
-        self.Id = ProjectDTO.Id;
-        self.ProjectName = ProjectDTO.ProjectName;
-        self.ProjectNumber = ProjectDTO.ProjectNumber;
-        self.ProgramId = ProjectDTO.ProgramId;
-        self.IsActive = ProjectDTO.IsActive;
-        self.IsInitiative = ProjectDTO.IsInitiative;
-    }
-
-    function DataTransferModel(DataTransferModel) {
-        var self = this;
-        self.IsSucess = DataTransferModel.IsSucess;
-        self.Message = DataTransferModel.Message;
-        self.DataValue = DataTransferModel.DataValue;
-    }
-   
     /***********Global DATA MODELS**********/
      
     
@@ -53,26 +19,12 @@
     self.UserFullName = ko.observable(0); ///Login UserFullName
     self.selectedProject = ko.observable(0);
 
-    self.ProjectsList = ko.observableArray([]);
-
     /***********Global Variables**********/
 
 
     /***********Global Objects**********/
     var LoginDTO = new LoginDTO(new Object());
     /***********Global Objects**********/
-
-
-    
-   
-
-    /***********Global Services**********/
-
-    // 1. Service_Login_Validate(userName,password) //
-    // 2. GetProjectsList() //
-
-  
-
 
     self.Service_Login_Validate = function () {
             var username = $$("#txtUsername").val();
@@ -91,9 +43,8 @@
             LoginDTO.UserName = username;
             LoginDTO.Password = password;
 
-
             var Service_Login_Validate_URL = baseUrl + "api/UserManagement/LoginUserValidation";
-
+            self.LoadPreLoder();
             $.ajax({
                 url: Service_Login_Validate_URL,
                 type: "POST",
@@ -102,7 +53,7 @@
                 dataType: "json",
                 async: true,
                 success: function (data, textStatus, jqXHR) {
-                   
+                    self.UnLoadPreLoder();
                     if (data.IsSucess == true) {
                         self.UserID(data.DataValue.UserID);
                         self.UserName(data.DataValue.UserName);
@@ -115,6 +66,7 @@
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
+                    self.UnLoadPreLoder();
                     document.getElementById("msg").innerHTML = "Please check your network connection!";
                     myApp.alert("Network error. Contact your PMWeb Admin!");
                     $('#txtPassword').focus().select();
@@ -122,38 +74,20 @@
                 }
             });
 
-
-           
     }
 
-    self.abc = function () {
-        alert("abc");
+    self.LoadPreLoder = function () {
+        document.getElementById("Preloader").style.display = "block";
+        document.getElementById("txtUsername").setAttribute("disabled", "disabled");
+        document.getElementById("txtPassword").setAttribute("disabled", "disabled");
+        document.getElementById("next").setAttribute("disabled", "disabled");
     }
-    self.GetProjectsList = function () {
-        alert("GetProjectsList");
-        var GetProjectsList_URL = baseUrl + "api/WorkFlow/GetProjectsList";
-        $.ajax({
-            url: GetProjectsList_URL,
-            type: "GET",
-            contentType: 'application/json; charset=utf-8',
-            async: true,
-            success: function (data, textStatus, jqXHR) {
-                if (data.IsSucess == true) {
-                    self.ProjectsList.removeAll();
-                    ko.utils.arrayForEach(data.DataValue, function (record) {
-                       alert("sfs");
-                        self.ProjectsList.push(new ProjectDTO(record));
-                    });
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                // alert('Error: ' + errorThrown + "/" + textStatus);
-            }
-        });
-    };
-    /***********Global Services**********/
-       
 
-
+    self.UnLoadPreLoder = function () {
+        document.getElementById("Preloader").style.display = "none";
+        document.getElementById("txtUsername").removeAttribute("disabled");
+        document.getElementById("txtPassword").removeAttribute("disabled");
+        document.getElementById("next").removeAttribute("disabled");
+    }
 
 }

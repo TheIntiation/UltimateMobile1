@@ -172,14 +172,14 @@
                         </div>
                     </a>
                 </li>
-                <li data-bind="click:go_to_subscribe" style="background-color:#3598db;">
+                <!--<li data-bind="click:go_to_subscribe" style="background-color:#3598db;">
                     <a class="item-link item-content">
                         <div class="item-media"><i style="font-size: 20px;" class="icon f7-icons menue_icon_font">social_rss</i></div>
                         <div class="item-inner" style="background-image:none">
                             <div class="item-title menue_font">Subscribe</div>
                         </div>
                     </a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>
@@ -189,10 +189,11 @@
                 <div class="r1ight topBar">
                     <a style="color:#f7f7f8" href="#" class="link icon-only open-panel"> <i class="icon f7-icons">bars</i></a>
                 </div>
+                <center>
+                    <div class="center sliding topBar" style="padding-left:44px;">Workflow Inbox Details</div>
+                </center>
             </div>
-            <center>
-                <div class="center sliding topBar">Workflow Inbox Details</div>
-            </center>
+            
         </div>
     </div>
     <div class="view">
@@ -318,14 +319,10 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <span><strong>Download:</strong></span><a href="#" data-bind="click:$root.getRecordAttachmentById" class="external">Download</a>
-                                                                    <!--<a data-bind="attr: { href: FullFileName }"  target="_blank"  class="external">
-                                                                        Report
-                                                                    </a>-->
-                                                                    <a data-bind="click: $root.openUrl"  target="_blank"  class="external">
-                                                                        Report
+                                                                   
+                                                                    <a data-bind="click: $root.openUrl"  target="_blank"  class="button active color-lightgreen external">
+                                                                        <i style="color: white;font-weight: normal;font-size:18px;" title="fdgfg" class="icon f7-icons">download</i>&nbsp;&nbsp;&nbsp;Download
                                                                     </a>
-
                                                                 </td>
                                                             </tr>
 
@@ -421,12 +418,6 @@
     </div>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
-
-    <script type="text/javascript" src="js/Common.js"></script>
-    <script type="text/javascript" src="js/Loclization.js"></script>
-    <script type="text/javascript" src="js/Getting.js"></script>
-    <script type="text/javascript" src="js/Posting.js"></script>
-    <script type="text/javascript" src="js/Vlaidation.js"></script>
     <script type="text/javascript" src="js/highcharts.js"></script>
     <script type="text/javascript" src="js/highcharts-3d.js"></script>
     <script type="text/javascript" src="js/export-data.js"></script>

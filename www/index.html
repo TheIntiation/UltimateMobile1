@@ -129,7 +129,7 @@
         <div class="pages navbar-through toolb1ar-fixed">
           <div data-page="index" class="page no-navbar" >
             <div class="page-content"  style="background-image: url('./logos/bg1.jpg');background-size:cover;  background-repeat: no-repeat;  background-attachment: fixed;">
-               <!-- <img  src="./logos/HMC.png" style="width:50%;margin-top:5%;margin-left:45%">-->
+                <img  src="./logos/HMC.png" style="width:50%;margin-top:5%;margin-left:45%">
                  <div style="" class="login_form">
                     <h2 style="text-align: center;color: rgb(50,138,174);">HFD EXECUTIVE APP</h2>
                         <form action="/action_page.php">
@@ -138,8 +138,11 @@
                             <input id ="next"  type="button" data-bind="click:Service_Login_Validate" class="submitbtn" value="Submit">
                             <center>
                                 <label id="msg" class="lblMessage"></label>
+                                <div class="col-25" id="Preloader"  style="display:none;">
+                                    <span class="preloader preloader-blue"></span>
+                                </div>
                             </center>
-                            
+                           
                         </form>
                        <div style="margin-top: 10%;">
                           <center>  
@@ -173,11 +176,6 @@
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
-    <script type="text/javascript" src="js/Common.js"></script>
-    <script type="text/javascript" src="js/Loclization.js"></script>
-    <script type="text/javascript" src="js/Getting.js"></script>
-    <script type="text/javascript" src="js/Posting.js"></script>
-    <script type="text/javascript" src="js/Vlaidation.js"></script>
     <script type="text/javascript" src="js/highcharts.js"></script>
     <script type="text/javascript" src="js/highcharts-3d.js"></script>
     <script type="text/javascript" src="js/export-data.js"></script>

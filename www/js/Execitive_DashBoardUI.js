@@ -243,6 +243,9 @@ function Execitive_DashBoardUI() {
     self.file_name = ko.observable();
     self.GetProjectsList = function () {
         var GetProjectsList_URL = baseUrl + "api/WorkFlow/GetALLUserProjects?UserId=" + self.UserID();
+
+        self.LoadPreLoder();
+
         $.ajax({
             url: GetProjectsList_URL,
             type: "GET",
@@ -257,8 +260,10 @@ function Execitive_DashBoardUI() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                self.UnLoadPreLoder();
                 // alert('Error: ' + errorThrown + "/" + textStatus);
             }, complete: function (data) {
+                self.UnLoadPreLoder();
                 self.selectedProject(projectid);
                 bindingsApplied = true;
                 self.DrawCostSummaryChart();
@@ -271,7 +276,13 @@ function Execitive_DashBoardUI() {
             }
         });
     };
+    self.LoadPreLoder = function () {
+        document.getElementById("Preloader").style.display = "block";
+    }
 
+    self.UnLoadPreLoder = function () {
+        document.getElementById("Preloader").style.display = "none";
+    }
     self.drawchartDelayedDocuments = function () {
 
         var GetProjectsList_URL = baseUrl + "api/WorkFlow/getdelayeddocumentsperproject?projectId=" + self.selectedProject();;
@@ -280,7 +291,7 @@ function Execitive_DashBoardUI() {
         var chartdata = [];
         var final = [];
 
-
+        self.LoadPreLoder();
         $.ajax({
             url: GetProjectsList_URL,
             type: "GET",
@@ -297,9 +308,11 @@ function Execitive_DashBoardUI() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                self.UnLoadPreLoder();
                 // alert('Error: ' + errorThrown + "/" + textStatus);
             },
             complete: function (data) {
+                self.UnLoadPreLoder();
                 for (var i = 0; i < name.length; i++) {
                     //  alert("down"+name[i]);
                     final.push({
@@ -366,7 +379,7 @@ function Execitive_DashBoardUI() {
         var final = [];
         var datas = [];
 
-
+        self.LoadPreLoder();
         $.ajax({
             url: GetProjectsList_URL,
             type: "GET",
@@ -382,10 +395,11 @@ function Execitive_DashBoardUI() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                self.UnLoadPreLoder();
                 // alert('Error: ' + errorThrown + "/" + textStatus);
             },
             complete: function (data) {
-
+                self.UnLoadPreLoder();
                 //                datas=[{
                 //        name: 'Draft',
                 //        data: [5]

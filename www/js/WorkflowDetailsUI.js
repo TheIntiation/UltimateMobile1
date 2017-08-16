@@ -878,7 +878,6 @@ function WorkflowDetailsUI() {
     self.openUrl=function(data){
         window.opener = null;
         window.close();
-        alert(data.FullFileName);
         window.open(data.FullFileName,  'toolbar=no,menubar=no,location=no,status=no');
         
     }

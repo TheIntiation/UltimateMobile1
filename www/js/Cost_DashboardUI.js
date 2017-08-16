@@ -140,6 +140,24 @@ function Cost_DashboardUI() {
         self.TotalPendingItems = MenueDTO.TotalPendingItems;
     }
 
+    function returninMillion(labelValue) {
+        // Nine Zeroes for Billions
+        return Math.abs(Number(labelValue)) >= 1.0e+9
+
+        ? Math.abs(Number(labelValue)) / 1.0e+9 + "B"
+        // Six Zeroes for Millions 
+        : Math.abs(Number(labelValue)) >= 1.0e+6
+
+        ? Math.abs(Number(labelValue)) / 1.0e+6 + "M"
+        // Three Zeroes for Thousands
+        : Math.abs(Number(labelValue)) >= 1.0e+3
+
+        ? Math.abs(Number(labelValue)) / 1.0e+3 + "K"
+
+        : Math.abs(Number(labelValue));
+    }
+
+
     function ProjectDTO(ProjectDTO) {
         var self = this;
         self.Id = ProjectDTO.Id;
@@ -306,11 +324,11 @@ function Cost_DashboardUI() {
                     self.TotalInvoicedPercentage(TotalInvoicedPercentage2);
 
                     var TotalRevisedContrcatSum2 = TotalRevisedContrcatSum.toFixed(1)
-                    var frmtCont = formatLargeNumber(TotalRevisedContrcatSum2);
+                    var frmtCont = returninMillion(TotalRevisedContrcatSum2);
                     self.TotalRevisedContrcatSum(frmtCont);
 
                     var TotalInvoiced2 = TotalInvoiced.toFixed(1)
-                    var frmtTotalInvoiced = formatLargeNumber(TotalInvoiced2);
+                    var frmtTotalInvoiced = returninMillion(TotalInvoiced2);
                     self.TotalInvoiced(frmtTotalInvoiced);
 
                 }

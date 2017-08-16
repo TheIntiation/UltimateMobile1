@@ -1,4 +1,3 @@
-// Initialize your app
 var myApp = new Framework7({
     modalTitle: 'Ultimate PMWeb App',
     template7Pages: true,
@@ -7,29 +6,14 @@ var myApp = new Framework7({
     swipePanelOnlyClose: true,
     swipeBackPage: false
 });
-
 var mySwiper = myApp.swiper('.swiper-container', {
     pagination: '.swiper-pagination'
 });
-
-
 var $$ = Dom7;
-
 var RecordId=0;
-
 var isAndroid = Framework7.prototype.device.android === true;
 var isIos = Framework7.prototype.device.ios === true;
 
-//var mainView = myApp.addView('.view-main', {
-//    // Because we use fixed-through navbar we can enable dynamic navbar
-//    dynamicNavbar: true,
-//    template7Pages: true
-//});
-
-Template7.global = {
-    isArabic: false,
-    isEnglish: true
-};
 var baseUrl = "http://localhost:6607/";
 //var baseUrl = "http://168.187.116.4:8080/";
 function CopyRights(){
@@ -51,9 +35,6 @@ function open_dashboard(projectid, type, UserID) {
     }
     
 }
-
-
-
 var dynamicPageIndex = 0;
 function createContentPage() {
 	mainView.router.loadContent(
