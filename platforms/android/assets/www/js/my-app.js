@@ -30,8 +30,8 @@ Template7.global = {
     isArabic: false,
     isEnglish: true
 };
-//var baseUrl = "http://localhost:6607/";
-var baseUrl = "http://168.187.116.4:8080/";
+var baseUrl = "http://localhost:6607/";
+//var baseUrl = "http://168.187.116.4:8080/";
 function CopyRights(){
     document.getElementById("op").innerHTML ="© All Rights Reserved to <span style=color:#6C3483;font-weight: bold;>Ultimate Solutions</span> " + new Date().getFullYear();   
 }
