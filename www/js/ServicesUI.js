@@ -1,4 +1,5 @@
-﻿function ServicesUI() {
+﻿
+function ServicesUI() {
     var self = this;
 
 
@@ -9,6 +10,15 @@
         self.UserName = LoginDTO.UserName;
         self.Password = LoginDTO.Password;
     }
+
+    function DeviceDTO(DeviceDTO) {
+        var self = this;
+        self.UserID = DeviceDTO.UserID;
+        self.UserName = DeviceDTO.UserName;
+        self.IMEI = DeviceDTO.IMEI;
+    }
+
+
 
     /***********Global DATA MODELS**********/
      
@@ -24,6 +34,7 @@
 
     /***********Global Objects**********/
     var LoginDTO = new LoginDTO(new Object());
+    var DeviceDTO = new DeviceDTO(new Object());
     /***********Global Objects**********/
 
     self.Service_Login_Validate = function () {
@@ -71,10 +82,45 @@
                     myApp.alert("Network error. Contact your PMWeb Admin!");
                     $('#txtPassword').focus().select();
                     return;
+                }, complete: function (data) {
+                    self.AddUserDeviceDetails();
                 }
             });
 
     }
+
+
+    self.AddUserDeviceDetails = function () {
+
+        DeviceDTO.UserID = self.UserID();
+        DeviceDTO.UserName = self.UserName();
+        DeviceDTO.IMEI = "IMEI";
+
+        var AddUserDeviceDetails_URL = baseUrl + "api/UserManagement/AddUserDeviceDetails";
+        self.LoadPreLoder();
+        $.ajax({
+            url: AddUserDeviceDetails_URL,
+            type: "POST",
+            data: JSON.stringify(DeviceDTO),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: false,
+            success: function (data, textStatus, jqXHR) {
+                self.UnLoadPreLoder();
+                if (data.IsSucess == true) {
+                    
+                } else {
+                  
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                self.UnLoadPreLoder();
+                return;
+            }
+        });
+
+    }
+
 
     self.LoadPreLoder = function () {
         document.getElementById("Preloader").style.display = "block";
